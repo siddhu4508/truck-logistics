@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Truck Logistics Management{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Add your CSS here -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'billing_list' %}">Billing</a></li>
+                <li><a href="{% url 'dispatch_list' %}">Dispatch</a></li>
+                <li><a href="{% url 'driver_list' %}">Drivers</a></li>
+                <li><a href="{% url 'fuel_list' %}">Fuel</a></li>
+                <li><a href="{% url 'inventory_list' %}">Inventory</a></li>
+                <li><a href="{% url 'maintenance_list' %}">Maintenance</a></li>
+                <li><a href="{% url 'report_list' %}">Reports</a></li>
+                <li><a href="{% url 'tracking_list' %}">Tracking</a></li>
+                <li><a href="{% url 'trip_list' %}">Trips</a></li>
+                <li><a href="{% url 'user_list' %}">Users</a></li>
+                <li><a href="{% url 'vehicle_list' %}">Vehicles</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

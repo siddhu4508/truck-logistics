@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispatch Detail</title>
+</head>
+<body>
+    <h1>Dispatch Detail</h1>
+    <p><strong>Vehicle Number:</strong> {{ dispatch.vehicle_number }}</p>
+    <p><strong>Driver Name:</strong> {{ dispatch.driver_name }}</p>
+    <p><strong>Destination:</strong> {{ dispatch.destination }}</p>
+    <p><strong>Dispatch Date:</strong> {{ dispatch.dispatch_date }}</p>
+    <p><strong>Estimated Arrival Date:</strong> {{ dispatch.estimated_arrival_date }}</p>
+    <p><strong>Status:</strong> {{ dispatch.status }}</p>
+    <p><strong>Remarks:</strong> {{ dispatch.remarks }}</p>
+    <a href="{% url 'dispatch_list' %}">Back to Dispatch List</a>
+</body>
+</html>

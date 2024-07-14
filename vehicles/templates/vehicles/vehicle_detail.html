@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Detail</title>
+</head>
+<body>
+    <h1>Vehicle Detail</h1>
+    <p><strong>Registration Number:</strong> {{ vehicle.registration_number }}</p>
+    <p><strong>Model:</strong> {{ vehicle.model }}</p>
+    <p><strong>Capacity:</strong> {{ vehicle.capacity }} tons</p>
+    <p><strong>Availability Status:</strong> {{ vehicle.availability_status }}</p>
+    <p><strong>Purchase Date:</strong> {{ vehicle.purchase_date }}</p>
+    <p><strong>Last Maintenance Date:</strong> {{ vehicle.last_maintenance_date }}</p>
+    <a href="{% url 'vehicle_list' %}">Back to Vehicle List</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Detail</title>
+</head>
+<body>
+    <h1>Maintenance Detail</h1>
+    <p><strong>Vehicle:</strong> {{ record.vehicle }}</p>
+    <p><strong>Maintenance Date:</strong> {{ record.maintenance_date }}</p>
+    <p><strong>Description:</strong> {{ record.description }}</p>
+    <p><strong>Cost:</strong> ${{ record.cost }}</p>
+    <a href="{% url 'maintenance_list' %}">Back to Maintenance Records</a>
+</body>
+</html>

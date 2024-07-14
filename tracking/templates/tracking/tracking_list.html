@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking List</title>
+</head>
+<body>
+    <h1>Tracking List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Trip ID</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tracking in trackings %}
+            <tr>
+                <td><a href="{% url 'tracking_detail' tracking.id %}">{{ tracking.trip.id }}</a></td>
+                <td>{{ tracking.latitude }}</td>
+                <td>{{ tracking.longitude }}</td>
+                <td>{{ tracking.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

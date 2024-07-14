@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip List</title>
+</head>
+<body>
+    <h1>Trip List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Destination</th>
+                <th>Vehicle</th>
+                <th>Start Time</th>
+                <th>Distance (km)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trip in trips %}
+            <tr>
+                <td><a href="{% url 'trip_detail' trip.id %}">{{ trip.destination }}</a></td>
+                <td>{{ trip.vehicle.registration_number }}</td>
+                <td>{{ trip.start_time }}</td>
+                <td>{{ trip.distance }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

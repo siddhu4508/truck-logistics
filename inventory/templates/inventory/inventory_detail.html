@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Detail</title>
+</head>
+<body>
+    <h1>Inventory Item Detail</h1>
+    <p><strong>Name:</strong> {{ item.name }}</p>
+    <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+    <p><strong>Description:</strong> {{ item.description }}</p>
+    <p><strong>Price per Unit:</strong> ${{ item.price_per_unit }}</p>
+    <a href="{% url 'inventory_list' %}">Back to Inventory List</a>
+</body>
+</html>

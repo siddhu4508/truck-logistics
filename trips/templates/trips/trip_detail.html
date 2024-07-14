@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Detail</title>
+</head>
+<body>
+    <h1>Trip Detail</h1>
+    <p><strong>Destination:</strong> {{ trip.destination }}</p>
+    <p><strong>Vehicle:</strong> {{ trip.vehicle.registration_number }}</p>
+    <p><strong>Start Time:</strong> {{ trip.start_time }}</p>
+    <p><strong>End Time:</strong> {{ trip.end_time }}</p>
+    <p><strong>Distance:</strong> {{ trip.distance }} km</p>
+    <p><strong>Driver Name:</strong> {{ trip.driver_name }}</p>
+    <a href="{% url 'trip_list' %}">Back to Trip List</a>
+</body>
+</html>

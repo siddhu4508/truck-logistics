@@ -1,0 +1,22 @@
+nav ul {
+    list-style-type: none;
+    /* Removes bullet points */
+    padding: 0;
+    /* Removes default padding */
+    margin: 0;
+    /* Removes default margin */
+    display: flex;
+    /* Uses Flexbox to arrange items in a row */
+}
+
+nav ul li {
+    margin-right: 15px;
+    /* Adds space between items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* Removes underline from links */
+    color: #007bff;
+    /* Sets the link color */
+}

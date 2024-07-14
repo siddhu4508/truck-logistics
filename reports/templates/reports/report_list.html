@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports List</title>
+</head>
+<body>
+    <h1>Reports List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Trip ID</th>
+                <th>Total Distance (km)</th>
+                <th>Total Time</th>
+                <th>Fuel Consumed (liters)</th>
+                <th>Report Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+            <tr>
+                <td><a href="{% url 'report_detail' report.id %}">{{ report.trip.id }}</a></td>
+                <td>{{ report.total_distance }}</td>
+                <td>{{ report.total_time }}</td>
+                <td>{{ report.fuel_consumed }}</td>
+                <td>{{ report.report_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

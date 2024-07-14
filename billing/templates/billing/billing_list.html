@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing List</title>
+</head>
+<body>
+    <h1>Billing List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Invoice Number</th>
+                <th>Vehicle Number</th>
+                <th>Driver Name</th>
+                <th>Service Type</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for billing in billings %}
+            <tr>
+                <td><a href="{% url 'billing_detail' billing.id %}">{{ billing.invoice_number }}</a></td>
+                <td>{{ billing.vehicle_number }}</td>
+                <td>{{ billing.driver_name }}</td>
+                <td>{{ billing.service_type }}</td>
+                <td>{{ billing.total_amount }}</td>
+                <td>{{ billing.payment_status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

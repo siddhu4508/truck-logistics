@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Detail</title>
+</head>
+<body>
+    <h1>Billing Detail</h1>
+    <p><strong>Invoice Number:</strong> {{ billing.invoice_number }}</p>
+    <p><strong>Vehicle Number:</strong> {{ billing.vehicle_number }}</p>
+    <p><strong>Driver Name:</strong> {{ billing.driver_name }}</p>
+    <p><strong>Service Type:</strong> {{ billing.service_type }}</p>
+    <p><strong>Billing Date:</strong> {{ billing.billing_date }}</p>
+    <p><strong>Total Amount:</strong> {{ billing.total_amount }}</p>
+    <p><strong>Payment Status:</strong> {{ billing.payment_status }}</p>
+    <p><strong>Remarks:</strong> {{ billing.remarks }}</p>
+    <a href="{% url 'billing_list' %}">Back to Billing List</a>
+</body>
+</html>

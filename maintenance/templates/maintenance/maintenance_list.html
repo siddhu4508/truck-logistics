@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Records</title>
+</head>
+<body>
+    <h1>Maintenance Records</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Vehicle</th>
+                <th>Maintenance Date</th>
+                <th>Description</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td><a href="{% url 'maintenance_detail' record.id %}">{{ record.vehicle }}</a></td>
+                <td>{{ record.maintenance_date }}</td>
+                <td>{{ record.description }}</td>
+                <td>${{ record.cost }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Detail</title>
+</head>
+<body>
+    <h1>Report Detail</h1>
+    <p><strong>Trip ID:</strong> {{ report.trip.id }}</p>
+    <p><strong>Total Distance:</strong> {{ report.total_distance }} km</p>
+    <p><strong>Total Time:</strong> {{ report.total_time }}</p>
+    <p><strong>Fuel Consumed:</strong> {{ report.fuel_consumed }} liters</p>
+    <p><strong>Report Date:</strong> {{ report.report_date }}</p>
+    <a href="{% url 'report_list' %}">Back to Reports List</a>
+</body>
+</html>
