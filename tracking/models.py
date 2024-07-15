@@ -5,8 +5,8 @@ from trips.models import Trip  # Assuming you have a Trip model
 
 class Tracking(models.Model):
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
-    latitude = models.FloatField()
-    longitude = models.FloatField()
+    latitude = models.CharField(max_length=10)
+    longitude = models.CharField(max_length=10)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

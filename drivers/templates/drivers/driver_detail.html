@@ -1,25 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Driver Detail</title>
-</head>
-<body>
-    <h1>Driver Detail</h1>
-    <p><strong>Name:</strong> {{ driver.first_name }} {{ driver.last_name }}</p>
-    <p><strong>License Number:</strong> {{ driver.license_number }}</p>
-    <p><strong>Identity Card Number:</strong> {{ driver.identity_card_number }}</p>
-    <p><strong>Address:</strong> {{ driver.address }}</p>
-    {% if driver.image %}
-        <img src="{{ driver.image.url }}" alt="Driver Image" />
-    {% endif %}
-    {% if driver.license_image %}
-        <img src="{{ driver.license_image.url }}" alt="License Image" />
-    {% endif %}
-    {% if driver.identity_card_image %}
-        <img src="{{ driver.identity_card_image.url }}" alt="Identity Card Image" />
-    {% endif %}
-    <a href="{% url 'driver_list' %}">Back to Drivers List</a>
-</body>
-</html>
+{% extends "main/base.html" %}
+
+{% block content %}
+<h1>{{ driver.first_name }} {{ driver.last_name }}</h1>
+<p>License Number: {{ driver.license_number }}</p>
+<p>Identity Card Number: {{ driver.identity_card_number }}</p>
+<p>Address: {{ driver.address }}</p>
+
+<h2>Supervisors</h2>
+<ul>
+    {% for supervisor in driver.supervisors.all %}
+    <li>{{ supervisor.first_name }} {{ supervisor.last_name }}</li>
+    {% empty %}
+    <li>No supervisors assigned</li>
+    {% endfor %}
+</ul>
+
+<h2>Supervised Drivers</h2>
+<ul>
+    {% for supervised_driver in driver.supervised_drivers.all %}
+    <li>{{ supervised_driver.first_name }} {{ supervised_driver.last_name }}</li>
+    {% empty %}
+    <li>No supervised drivers</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'driver_list' %}">Back to Drivers List</a>
+{% endblock %}

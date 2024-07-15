@@ -10,7 +10,7 @@
     <p><strong>Name:</strong> {{ item.name }}</p>
     <p><strong>Quantity:</strong> {{ item.quantity }}</p>
     <p><strong>Description:</strong> {{ item.description }}</p>
-    <p><strong>Price per Unit:</strong> ${{ item.price_per_unit }}</p>
+    <p><strong>Price per Unit:</strong> ₹{{ item.price_per_unit }}</p>
     <a href="{% url 'inventory_list' %}">Back to Inventory List</a>
 </body>
 </html>

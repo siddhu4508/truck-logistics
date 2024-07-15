@@ -22,7 +22,7 @@
                 <td><a href="{% url 'inventory_detail' item.id %}">{{ item.name }}</a></td>
                 <td>{{ item.quantity }}</td>
                 <td>{{ item.description }}</td>
-                <td>${{ item.price_per_unit }}</td>
+                <td>₹{{ item.price_per_unit }}</td>
             </tr>
             {% endfor %}
         </tbody>

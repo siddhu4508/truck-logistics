@@ -10,6 +10,8 @@ class Driver(models.Model):
     identity_card_number = models.CharField(max_length=50)
     identity_card_image = models.ImageField(upload_to='identity_cards/')
     address = models.TextField()
+    supervisors = models.ManyToManyField('self', symmetrical=False, related_name='supervised_drivers', blank=True)
+
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

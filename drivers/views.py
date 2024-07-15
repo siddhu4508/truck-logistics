@@ -8,5 +8,5 @@ def driver_list(request):
 
 
 def driver_detail(request, driver_id):
-    driver = get_object_or_404(Driver, id=driver_id)
+    driver = get_object_or_404(Driver, pk=driver_id)
     return render(request, 'drivers/driver_detail.html', {'driver': driver})

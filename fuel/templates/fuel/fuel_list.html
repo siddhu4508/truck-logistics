@@ -23,7 +23,7 @@
                 <td><a href="{% url 'fuel_detail' transaction.id %}">{{ transaction.fuel_type }}</a></td>
                 <td>{{ transaction.driver_name }}</td>
                 <td>{{ transaction.supervisor_name }}</td>
-                <td>${{ transaction.total_amount }}</td>
+                <td>₹{{ transaction.total_amount }}</td>
                 <td>{{ transaction.timestamp }}</td>
             </tr>
             {% endfor %}
